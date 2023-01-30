@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const SingleToDo = styled.div`
+  font-size: 20px;
   min-width: 400px;
   min-height: 70px;
   box-sizing: border-box;
