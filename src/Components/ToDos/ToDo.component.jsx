@@ -1,14 +1,17 @@
 // import { preprocessCSS } from "vite"
-import { SingleToDo } from "./Todos.styled"
+import { SingleToDo, ToDoName } from "./Todos.styled"
 import { Checkbox, Delete } from "../Input/Inputs.styled"
+import ToDos from "./ToDos.component"
 
-const ToDo = () => {
+const ToDo = ({ name }) => {
+  const removeTodo = () => {}
+  const markTodo = () => {}
   return (
-    <SingleToDo>
-      <span>"Wyrzuć śmieci"</span>
+    <SingleToDo key={name}>
+      <ToDoName>{name}</ToDoName>
       <div>
-        <Delete type="checkbox" />
-        <Checkbox type="checkbox" />
+        <Delete type="checkbox" onClick={removeTodo} />
+        <Checkbox type="checkbox" onClick={markTodo} />
       </div>
     </SingleToDo>
   )

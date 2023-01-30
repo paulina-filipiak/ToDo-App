@@ -8,13 +8,18 @@ export const SingleToDo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: grey;
+  background: #f1f1f1;
   align-items: center;
   padding: 10px;
+  color: #323232;
 `
 
 export const AllToDos = styled.div`
   gap: 5px;
   display: flex;
   flex-direction: column;
+`
+
+export const ToDoName = styled.span`
+  color: #323232;
 `
