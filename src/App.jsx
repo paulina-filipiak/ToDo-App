@@ -23,7 +23,11 @@ function App() {
 
 	return (
 		<Layout>
-			<Input typeTodo={inputHandler} addTodo={addButtonHandler} />
+			<Input
+				typeTodo={inputHandler}
+				addTodo={addButtonHandler}
+				value={inputValue}
+			/>
 			<ToDos todos={todos} />
 		</Layout>
 	)
