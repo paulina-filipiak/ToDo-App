@@ -1,14 +1,17 @@
-import { AddToDo } from "./Inputs.styled"
+import { AddToDoInput } from "./Inputs.styled"
 
-const Input = ({ addTodo, value }) => {
-  return (
-    <AddToDo
-      type="text"
-      value={value}
-      onChange={addTodo}
-      placeholder="Enter todo here"
-    />
-  )
+const Input = ({ addTodo, typeTodo }) => {
+	return (
+		<>
+			<AddToDoInput
+				type="text"
+				onChange={typeTodo}
+				placeholder="Type todo here"
+			/>
+			<button onClick={addTodo}>Add</button>
+			{/* <button onClick={addTodo}>Add</button> */}
+		</>
+	)
 }
 
 export default Input
