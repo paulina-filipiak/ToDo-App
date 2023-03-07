@@ -2,10 +2,7 @@
 import { SingleToDo, ToDoName } from "./Todos.styled"
 import { Checkbox, Delete } from "../Input/Inputs.styled"
 
-const ToDo = ({ title }) => {
-	const removeTodo = () => {
-		console.log(`todo ${title} removed`)
-	}
+const ToDo = ({ title, ...rest }) => {
 	const markTodo = () => {
 		console.log(`todo ${title} marked`)
 	}
@@ -13,8 +10,8 @@ const ToDo = ({ title }) => {
 		<SingleToDo>
 			<ToDoName>{title}</ToDoName>
 			<div>
-				<Delete type="checkbox" onClick={() => removeTodo()} />
-				<Checkbox type="checkbox" onClick={() => markTodo()} />
+				<Delete type="checkbox" {...rest} />
+				<Checkbox type="checkbox" />
 			</div>
 		</SingleToDo>
 	)

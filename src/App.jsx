@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
 import Layout from "./Components/Layout/Layout.component"
 import "./App.css"
-import ToDos from "./Components/ToDos/ToDos.component"
 import Input from "./Components/Input/Input.componnet"
+import ToDo from "./Components/ToDos/ToDo.component"
+import { AllToDos } from "./Components/ToDos/Todos.styled"
+import { v4 as uuidv4 } from "uuid"
 
 function App() {
 	const [inputValue, setInputValue] = useState("")
@@ -12,6 +14,13 @@ function App() {
 		setInputValue(event.target.value)
 		// console.log("value is:", event.target.value)
 		// console.log("inputValue", inputValue)
+	}
+
+	const removeHandler = (index) => {
+		const filteredTodos = todos.filter((_, i) => i !== index)
+		console.log(filteredTodos)
+		console.log(index)
+		setTodos(filteredTodos)
 	}
 
 	const addButtonHandler = () => {
@@ -28,7 +37,11 @@ function App() {
 				addTodo={addButtonHandler}
 				value={inputValue}
 			/>
-			<ToDos todos={todos} />
+			<AllToDos>
+				{todos.map((todo, index) => (
+					<ToDo key={index} title={todo} onClick={() => removeHandler(index)} />
+				))}
+			</AllToDos>
 		</Layout>
 	)
 }
