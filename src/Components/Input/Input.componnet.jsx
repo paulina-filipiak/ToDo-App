@@ -1,9 +1,7 @@
-import { AddToDoInput } from "./Inputs.styled"
-
 const Input = ({ addTodo, typeTodo, value }) => {
 	return (
 		<>
-			<AddToDoInput
+			<input
 				type="text"
 				onChange={typeTodo}
 				placeholder="Type todo here"

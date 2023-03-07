@@ -1,5 +1,5 @@
 import ToDo from "./ToDo.component"
-import { AllToDos } from "./Todos.styled"
+
 import { v4 as uuidv4 } from "uuid"
 
 const ToDos = ({ todos, clickHandle, key, ...rest }) => {
@@ -9,11 +9,11 @@ const ToDos = ({ todos, clickHandle, key, ...rest }) => {
 	// }
 
 	return (
-		<AllToDos>
+		<div>
 			{todos.map((todo, index) => (
 				<ToDo key={index} title={todo} {...rest} />
 			))}
-		</AllToDos>
+		</div>
 	)
 }
 
