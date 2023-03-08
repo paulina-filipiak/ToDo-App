@@ -37,7 +37,7 @@ function App() {
 				addTodo={addButtonHandler}
 				value={inputValue}
 			/>
-			<AllToDos>
+			<AllToDos className="flex flex-col gap-4">
 				{todos.map((todo, index) => (
 					<ToDo key={index} title={todo} onClick={() => removeHandler(index)} />
 				))}
